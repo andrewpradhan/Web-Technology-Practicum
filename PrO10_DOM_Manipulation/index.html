@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>DOM</title>
+<style>body{font-family:Arial;max-width:640px;margin:24px auto}#box{padding:16px;border:2px solid #2563eb;border-radius:8px;margin:12px 0;transition:.3s}button{margin:4px;padding:8px 12px}li{margin:4px 0}</style></head><body>
+<h2 id="title">Leave Balance Panel</h2><div id="box"><p id="msg">Casual leave remaining: <span id="bal">12</span></p></div>
+<button id="use">Take 1 day</button><button id="add">Add holiday</button><button id="theme">Toggle highlight</button><button id="reset">Reset</button>
+<ul id="list"></ul><script>
+const bal=document.getElementById('bal'),list=document.getElementById('list'),box=document.getElementById('box');let n=12,h=0;
+document.getElementById('use').addEventListener('click',()=>{if(n>0){n--;bal.textContent=n;}if(n===0){document.getElementById('msg').textContent='No casual leave left!';box.style.borderColor='red';}});
+document.getElementById('add').addEventListener('click',()=>{h++;const li=document.createElement('li');li.textContent='Holiday #'+h;list.appendChild(li);});
+document.getElementById('theme').addEventListener('click',()=>{box.classList.toggle('on');box.style.background=box.classList.contains('on')?'#fef9c3':'';});
+document.getElementById('reset').addEventListener('click',()=>{n=12;h=0;bal.textContent=12;list.innerHTML='';box.style.cssText='';document.getElementById('msg').innerHTML='Casual leave remaining: <span id="bal">12</span>';location.reload();});
+</script></body></html>

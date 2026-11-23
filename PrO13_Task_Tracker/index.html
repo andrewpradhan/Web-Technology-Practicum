@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Task Tracker</title>
+<style>body{font-family:Arial;max-width:760px;margin:20px auto;background:#f8fafc}.row{display:flex;gap:8px;margin-bottom:12px}input,select{padding:8px;flex:1}button{padding:8px 12px;cursor:pointer}table{width:100%;border-collapse:collapse;background:#fff}td,th{border:1px solid #cbd5e1;padding:8px}th{background:#e0e7ff}.done td:nth-child(1){text-decoration:line-through;color:#64748b}</style></head><body>
+<h2>Leave Request Task Tracker</h2><div class="row"><input id="t" placeholder="Task (e.g. Review Arun's sick leave)"><input id="d" type="date"><select id="pr"><option>High</option><option>Medium</option><option>Low</option></select><button id="a">Add</button></div>
+<table><thead><tr><th>Task</th><th>Due Date</th><th>Priority</th><th>Actions</th></tr></thead><tbody id="tb"></tbody></table><script>
+let T=JSON.parse(localStorage.getItem('tasks')||'[]');const tb=document.getElementById('tb');
+function save(){localStorage.setItem('tasks',JSON.stringify(T));draw()}
+function draw(){tb.innerHTML='';T.forEach((x,i)=>{const r=tb.insertRow();if(x.done)r.className='done';[x.t,x.d,x.p].forEach(v=>r.insertCell().textContent=v);const c=r.insertCell();
+[['Done',()=>{x.done=!x.done;save()}],['Edit',()=>{const n=prompt('Edit task',x.t);if(n){x.t=n;save()}}],['Delete',()=>{T.splice(i,1);save()}]].forEach(([l,f])=>{const b=document.createElement('button');b.textContent=l;b.onclick=f;c.appendChild(b)})})}
+document.getElementById('a').onclick=()=>{const t=document.getElementById('t').value.trim();if(!t)return alert('Enter a task');T.push({t,d:document.getElementById('d').value,p:document.getElementById('pr').value,done:false});document.getElementById('t').value='';save()};
+draw();</script></body></html>

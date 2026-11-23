@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Leave Request Form</title>
+<style>body{font-family:Arial;background:#eef2ff}form{max-width:560px;margin:20px auto;background:#fff;padding:20px;border-radius:8px}label{display:block;margin-top:10px;font-weight:bold}input[type=text],input[type=date],select,textarea{width:100%;padding:7px;box-sizing:border-box}</style></head><body>
+<form action="#" method="post"><h2>Employee Leave Request</h2>
+<label for="eid">Employee ID</label><input type="text" id="eid" name="eid" required pattern="EMP[0-9]{3}" placeholder="EMP101">
+<label for="nm">Full Name</label><input type="text" id="nm" name="nm" required>
+<label for="dp">Department</label><select id="dp" name="dp" required><option value="">--Select--</option><option>HR</option><option>IT</option><option>Finance</option><option>Sales</option></select>
+<label>Leave Type</label><input type="radio" name="lt" id="c" value="Casual" required><label for="c" style="display:inline">Casual</label> <input type="radio" name="lt" id="s" value="Sick"><label for="s" style="display:inline">Sick</label> <input type="radio" name="lt" id="e" value="Earned"><label for="e" style="display:inline">Earned</label>
+<label for="sd">Start Date</label><input type="date" id="sd" name="sd" required>
+<label for="ed">End Date</label><input type="date" id="ed" name="ed" required>
+<label for="rs">Reason</label><textarea id="rs" name="rs" rows="3" required></textarea>
+<p><button type="submit">Submit</button> <button type="reset">Reset</button></p></form></body></html>

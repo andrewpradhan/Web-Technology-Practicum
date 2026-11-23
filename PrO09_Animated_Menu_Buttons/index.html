@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Animated Menu</title>
+<style>body{font-family:Arial;background:#0f172a;color:#e2e8f0;margin:0;overflow-x:hidden}
+nav{display:flex;gap:10px;padding:14px;background:#1e293b}nav a{color:#e2e8f0;text-decoration:none;padding:8px 14px;border-radius:6px;position:relative}
+nav a::after{content:"";position:absolute;left:14px;bottom:3px;width:0;height:2px;background:#38bdf8;transition:width .3s}nav a:hover::after{width:calc(100% - 28px)}
+.marquee{white-space:nowrap;animation:slide 8s linear infinite;font-size:22px;padding:18px 0;color:#fbbf24}
+@keyframes slide{from{transform:translateX(100vw)}to{transform:translateX(-100%)}}
+.btns{display:flex;gap:16px;padding:24px}button{padding:12px 22px;border:0;border-radius:8px;background:#2563eb;color:#fff;font-size:16px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-3px);box-shadow:0 8px 18px #38bdf8aa}button.pulse{animation:pulse 1.2s ease-in-out 3}
+@keyframes pulse{50%{transform:scale(1.1)}}</style></head><body>
+<nav><a href="#">Home</a><a href="#">Apply</a><a href="#">Status</a><a href="#">Help</a></nav>
+<div class="marquee">Leave applications for December close on 30 November &nbsp;•&nbsp; Submit early!</div>
+<div class="btns"><button>Submit</button><button class="pulse">Approve</button><button style="background:#dc2626">Reject</button></div></body></html>

@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Media Queries</title>
+<style>*{box-sizing:border-box}body{font-family:Arial;margin:0;padding:12px;background:#f1f5f9}h1{text-align:center;font-size:22px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery img{width:100%;height:auto;border-radius:6px;display:block}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.gallery{grid-template-columns:1fr}h1{font-size:18px}}
+@media(hover:none){.gallery img{box-shadow:0 2px 6px #0003}}</style></head><body>
+<h1>Responsive Gallery</h1><div class="gallery"><img src="g1.png" alt="1"><img src="g2.png" alt="2"><img src="g3.png" alt="3"><img src="g4.png" alt="4"><img src="g5.png" alt="5"><img src="g6.png" alt="6"></div></body></html>

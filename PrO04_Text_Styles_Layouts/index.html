@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Text Styles</title>
+<style>
+body{font-family:Georgia,serif;background:#fafaf9;color:#292524;margin:0}
+header{background:#1e3a8a;color:#fff;text-align:center;padding:26px;letter-spacing:3px;text-transform:uppercase}
+article{max-width:800px;margin:24px auto;padding:0 16px}
+h2{color:#1e3a8a;border-bottom:3px solid #fbbf24;padding-bottom:4px;font-variant:small-caps}
+p{line-height:1.7;text-align:justify;text-indent:1.5em}
+p:first-of-type::first-letter{font-size:3em;float:left;line-height:1;padding-right:6px;color:#b45309}
+.cols{column-count:2;column-gap:28px}
+blockquote{border-left:5px solid #fbbf24;background:#fef3c7;margin:16px 0;padding:10px 16px;font-style:italic}
+.hl{background:#fde68a;text-decoration:underline wavy #b45309}
+@media(max-width:600px){.cols{column-count:1}}
+</style></head><body><header><h1>Employee Handbook</h1></header><article>
+<h2>Working Hours</h2><p>Regular working hours run from nine to five. Employees are encouraged to plan <span class="hl">leave requests</span> at least three days in advance so that teams can arrange cover.</p>
+<blockquote>Good typography makes policies easy to read and hard to misunderstand.</blockquote>
+<h2>Leave Rules</h2><div class="cols"><p>Casual leave is limited to twelve days per year and may be taken in half-day units. Sick leave beyond two days requires a medical certificate.</p><p>Earned leave accumulates monthly and can be carried forward up to thirty days. Approval is given by the reporting manager through the portal.</p></div>
+</article></body></html>

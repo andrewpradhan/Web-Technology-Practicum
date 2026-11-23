@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Order Form</title>
+<style>body{font-family:Arial;background:#f1f5f9}form{max-width:480px;margin:20px auto;background:#fff;padding:20px;border-radius:8px}label{display:block;margin-top:10px;font-weight:bold}input,select{width:100%;padding:8px;box-sizing:border-box;border:1px solid #94a3b8;border-radius:4px}.err{color:#dc2626;font-size:13px;min-height:16px}input.bad,select.bad{border-color:#dc2626;background:#fef2f2}input.ok{border-color:#16a34a}#res{margin-top:12px;font-weight:bold;color:#16a34a}</style></head><body>
+<form id="f" novalidate><h2>Online Order</h2>
+<label>Name</label><input id="n"><div class="err" id="en"></div>
+<label>Email</label><input id="e"><div class="err" id="ee"></div>
+<label>Phone</label><input id="p" placeholder="10 digits"><div class="err" id="ep"></div>
+<label>Product</label><select id="s"><option value="">--Select--</option><option>Laptop</option><option>Mouse</option></select><div class="err" id="es"></div>
+<label>Quantity (1-10)</label><input id="q" type="number"><div class="err" id="eq"></div>
+<button>Place Order</button><div id="res"></div></form><script>
+const rules={n:v=>/^[A-Za-z ]{3,}$/.test(v)||'Name must have 3+ letters',e:v=>/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(v)||'Enter a valid email',p:v=>/^[0-9]{10}$/.test(v)||'Phone must be 10 digits',s:v=>v!==''||'Select a product',q:v=>(v>=1&&v<=10)||'Quantity must be 1 to 10'};
+const err={n:'en',e:'ee',p:'ep',s:'es',q:'eq'};
+function chk(id){const el=document.getElementById(id),r=rules[id](el.value.trim());document.getElementById(err[id]).textContent=r===true?'':r;el.classList.toggle('bad',r!==true);el.classList.toggle('ok',r===true);return r===true}
+Object.keys(rules).forEach(id=>document.getElementById(id).addEventListener('blur',()=>chk(id)));
+document.getElementById('f').onsubmit=ev=>{ev.preventDefault();const ok=Object.keys(rules).map(chk).every(Boolean);document.getElementById('res').textContent=ok?'Order placed successfully!':'';}
+</script></body></html>

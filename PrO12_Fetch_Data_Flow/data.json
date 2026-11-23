@@ -1,0 +1,4 @@
+[{"id":"EMP101","name":"Meena Raj","dept":"HR","type":"Casual","from":"2026-11-24","to":"2026-11-25","status":"Approved"},
+{"id":"EMP102","name":"Arun Kumar","dept":"IT","type":"Sick","from":"2026-11-26","to":"2026-11-28","status":"Pending"},
+{"id":"EMP103","name":"Priya Nair","dept":"Finance","type":"Earned","from":"2026-12-01","to":"2026-12-10","status":"Approved"},
+{"id":"EMP104","name":"Rahul Das","dept":"Sales","type":"Casual","from":"2026-12-03","to":"2026-12-03","status":"Rejected"}]
